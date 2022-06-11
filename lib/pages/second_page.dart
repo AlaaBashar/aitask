@@ -135,7 +135,7 @@ class _SecondPageState extends State<SecondPage> {
     DataModel dataModel = DataModel();
     dataModel.date =DateTime.now() ;
     await Api.setData(dataModel: dataModel,itemList: dataList);
-    openNewPage(context, const ThirdPage());
+    openNewPage(context, const ThirdPage(),popPreviousPages: true);
 
 
   }
