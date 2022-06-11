@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class Api{
   static FirebaseFirestore db = FirebaseFirestore.instance;
-
   static Future<dynamic> setData({DataModel? dataModel,List<ItemModel>? itemList }) async {
     String? docUid;
     try {
@@ -22,9 +21,6 @@ class Api{
               });
             })
           });
-
-
-
     } catch (e) {
       debugPrint(e.toString());
       return Future.error(e.toString());
@@ -43,7 +39,6 @@ class Api{
       return Future.error(e.toString());
     }
   }
-
   static Future<dynamic> deleteData({String? itemUid }) async {
     try {
       DocumentReference doc = db.collection(CollectionsFireStoreKeys.DATA).doc(itemUid);
@@ -53,16 +48,5 @@ class Api{
       return Future.error(e.toString());
     }
   }
-
-
-
-
-
-
-
-}
-
-class CollectionsFireStoreKeys {
-  static const String DATA = 'Data';
 
 }
