@@ -35,6 +35,7 @@ class _ThirdPageState extends State<ThirdPage> {
         child:dataList != null?
         ListView.builder(
           shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
           itemCount:dataList!.length,
           itemBuilder: (context, index) {
             DataModel dataModel = dataList![index];
@@ -69,6 +70,8 @@ class _ThirdPageState extends State<ThirdPage> {
   Widget loadItems(List<ItemModel>? item,String? itemUId){
     return ListView.builder(
       shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
+
         itemCount: item!.length,
         itemBuilder: (context, index) {
           ItemModel? itemModel = item[index];
